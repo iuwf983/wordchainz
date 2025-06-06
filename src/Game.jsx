@@ -154,9 +154,7 @@ export default function Game() {
           </button>
         </form>
 
-        {feedbackMsg && (
-          <div className={`text-sm mt-1 h-5 ${feedbackType === 'error' ? 'text-red-500' : 'text-teal-600'}`}>{feedbackMsg}</div>
-        )}
+        <div className={`text-sm mt-1 h-5 ${feedbackType === 'error' ? 'text-red-500' : 'text-teal-600'}`}>{feedbackMsg}</div>
 
         <button
           onClick={startNewGame}
