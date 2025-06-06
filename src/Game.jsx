@@ -54,6 +54,8 @@ export default function Game() {
   }
 
   function startNewGame() {
+    updateHighScoreIfNeeded(score, chainLength); // check for high score before resetting
+
     const start = getRandomWord();
     setCurrentWord(start);
     setUsedWords([start]);
