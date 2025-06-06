@@ -106,7 +106,7 @@ export default function Game() {
   if (!wordsLoaded) return <div className="text-center mt-10 text-gray-700 dark:text-gray-300">Loading words...</div>;
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-white flex items-center justify-center px-4 font-sans relative">
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-white flex items-center justify-center px-4 sm:py-12 font-sans relative">
       <button
         className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
         onClick={() => setSettingsOpen(true)}
