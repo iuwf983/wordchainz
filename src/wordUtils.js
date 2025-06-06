@@ -1,7 +1,7 @@
 let wordsArray = [];
 
 export async function loadWords() {
-  const res = await fetch('/words_alpha_clean.txt');
+  const res = await fetch('/wordchainz/words_alpha_clean.txt');
   const text = await res.text();
   wordsArray = text.split('\n').map(w => w.trim().toLowerCase()).filter(Boolean);
 }
