@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+.animate-shake {
+  animation: shake 0.3s ease;
+}
+
+body {
+  @apply bg-white text-gray-800 dark:bg-gray-900 dark:text-white;
+}
+
+select {
+  @apply bg-white text-gray-900 dark:bg-gray-700 dark:text-white border rounded px-2 py-1;
+}
