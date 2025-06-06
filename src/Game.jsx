@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import confetti from 'canvas-confetti';
 import { loadWords, getRandomWord, isValidWord, hasNextWord } from './wordUtils';
 import useTheme from './useTheme';
@@ -17,6 +17,7 @@ export default function Game() {
   const [feedbackType, setFeedbackType] = useState('');
   const [shake, setShake] = useState(false);
   const [highScore, setHighScore] = useState(0);
+  const inputRef = useRef(null);
 
   useEffect(() => {
     loadWords().then(() => {
@@ -86,6 +87,8 @@ export default function Game() {
       setGameOver(true);
       updateHighScoreIfNeeded(newScore, chainLength);
       showFeedback('No more words available. Game over.', 'error');
+    } else {
+      inputRef.current?.focus();
     }
   }
 
@@ -133,7 +136,7 @@ export default function Game() {
           <input
             type="text"
             className={`flex-grow border rounded px-4 py-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-teal-400 transition ${shake ? 'animate-shake' : ''}`}
-            value={input}
+            value={input} ref={inputRef}
             onChange={(e) => {
               setInput(e.target.value);
               setFeedbackMsg('');
