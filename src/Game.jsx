@@ -148,7 +148,7 @@ export default function Game() {
           <button
             type="submit"
             disabled={gameOver}
-            className="bg-teal-600 hover:bg-teal-700 text-white rounded px-6 font-semibold transition"
+            className="bg-teal-600 hover:bg-teal-700 text-white rounded px-6 font-semibold transition py-2"
           >
             Submit
           </button>
