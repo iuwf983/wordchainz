@@ -132,7 +132,7 @@ export default function Game() {
           Score: <span className="font-semibold">{score}</span> | High score: <span className="font-semibold">{highScore}</span>
         </p>
 
-        <form onSubmit={handleSubmit} className="flex space-x-3 mb-2">
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3 mb-2">
           <input
             type="text"
             className={`flex-grow border rounded px-4 py-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-teal-400 transition ${shake ? 'animate-shake' : ''}`}
