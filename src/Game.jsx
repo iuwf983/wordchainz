@@ -71,6 +71,8 @@ export default function Game() {
     const guess = input.trim().toLowerCase();
     const prefix = currentWord.slice(-chainLength);
 
+    inputRef.current?.focus();
+
     if (!isValidWord(guess)) return handleInvalid('Word not found.');
     if (usedWords.includes(guess)) return handleInvalid('Word already used.');
     if (!guess.startsWith(prefix)) return handleInvalid(`Must start with "${prefix}".`);
@@ -87,8 +89,6 @@ export default function Game() {
       setGameOver(true);
       updateHighScoreIfNeeded(newScore, chainLength);
       showFeedback('No more words available. Game over.', 'error');
-    } else {
-      inputRef.current?.focus();
     }
   }
 
