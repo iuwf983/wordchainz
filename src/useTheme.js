@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 export default function useTheme() {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('wordchainz_theme') || 'light';
+    return localStorage.getItem('wordchainz_theme') || 'dark';
   });
 
   useEffect(() => {
